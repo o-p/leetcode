@@ -1,0 +1,33 @@
+name: Test JavaScript/TypeScript Solutions in Deno
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        deno: [ "v1.x" ]
+        os: [ ubuntu-latest ]
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v2
+
+      - name: Setup Deno
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+        uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
+        with:
+          deno-version: ${{ matrix.deno }}
+
+      - name: Cache Dependencies
+        run: deno cache problems/*/*.test.deno.ts
+
+      - name: Run Tests
+        run: deno test -A --unstable problems/*/*.test.deno.ts

@@ -1,4 +1,4 @@
-name: Test JavaScript/TypeScript Solutions
+name: Test JavaScript/TypeScript Solutions in Node.js
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
