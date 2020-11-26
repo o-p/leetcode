@@ -25,6 +25,6 @@ const lengthOfLongestSubstring = function(s) {
   }
 
   return longest
-};
+}
 
 export default lengthOfLongestSubstring
