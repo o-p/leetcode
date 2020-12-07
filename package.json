@@ -1,4 +1,11 @@
 {
+  "name": "practice-leetcode",
+  "license": "MIT",
+  "author": {
+    "name": "Chris Chu",
+    "email": "op.github.io@gmail.com",
+    "url": "https://github.com/o-p"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
