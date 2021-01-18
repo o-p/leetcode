@@ -1,7 +1,4 @@
-interface ListNode {
-  val: number;
-  next: ListNode | null;
-}
+import ListNode from '../../helpers/ListNode';
 
 // 不斷 next, 直到超過 n 之後就持續迭代替換 node
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {

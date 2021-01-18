@@ -1,18 +1,7 @@
 import removeNthFromEnd from './remove-nth-node-from-end-of-list';
-import removeNth from './remove-nth-node-from-end-of-list';
-
+import ListNode from '../../helpers/ListNode';
 
 describe('Remove Nth Node From End of List', () => {
-  class ListNode {
-    val: number
-    next: ListNode | null
-
-    constructor(val?: number, next?: ListNode | null) {
-      this.val = (val === undefined ? 0 : val)
-      this.next = (next === undefined ? null : next)
-    }
-  }
-
   test('head = [1], n = 1', (): void => {
     const head = new ListNode(1);
     const result = removeNthFromEnd(head, 1);
