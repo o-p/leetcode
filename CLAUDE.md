@@ -6,7 +6,7 @@ Personal LeetCode problem-solving practice. Problems are solved in multiple lang
 
 ## Directory Structure
 
-```
+```text
 problems/NNNN-problem-name/   # One directory per problem (zero-padded 4-digit prefix)
 helpers/                      # Shared types used across problems (e.g. ListNode)
 difficulty/                   # Problem categorization metadata
@@ -70,6 +70,79 @@ When asked to generate tests or scaffold a new problem:
 4. For Go: package name follows the pattern `problemNNNN` (e.g. `problem0026`)
 5. Use helper types from `helpers/` when the problem involves linked lists, trees, etc.
 6. Test case names should be descriptive enough to identify the case at a glance in VS Code's test runner
+
+## Scaffold Boilerplate (skip reading existing files — use these directly)
+
+When scaffolding a new problem `NNNN-problem-name` in language L, the steps are:
+
+1. `mkdir -p problems/NNNN-problem-name/`
+2. Write solution stub
+3. Write test file
+4. Run test to verify compile (expect failures on empty stub)
+
+### Go — solution stub
+
+```go
+package problemNNNN
+
+func functionName(args) returnType {
+    return zero_value
+}
+```
+
+### Go — test file
+
+```go
+package problemNNNN
+
+import (
+    "testing"
+
+    "github.com/stretchr/testify/assert"
+)
+
+func TestFunctionName(t *testing.T) {
+    tests := []struct {
+        name string
+        // input fields
+        want returnType
+    }{
+        {"description of case", inputArgs, expectedOutput},
+        // more cases...
+    }
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            assert.Equal(t, tt.want, functionName(tt.inputArgs))
+        })
+    }
+}
+```
+
+> If the problem uses linked lists or trees, add `. "github.com/o-p/leetcode/helpers"` to both files.
+
+### TypeScript — solution stub
+
+```typescript
+export default function functionName(args): returnType {
+    return zero_value;
+}
+```
+
+### TypeScript — test file
+
+```typescript
+import { describe, test, expect } from 'bun:test';
+import functionName from './problem-name';
+
+describe('FunctionName', () => {
+    test.each([
+        ['description', inputArgs, expectedOutput],
+        // more cases...
+    ])('%s', (_, input, expected) => {
+        expect(functionName(input)).toBe(expected);
+    });
+});
+```
 
 ## VS Code Workflow
 
