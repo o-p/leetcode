@@ -1,0 +1,19 @@
+name: Test TypeScript Solutions with Bun
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v2
+    - run: bun install
+    # 目前先用 *.test.bun.ts, 之後有空可以移除 Jest & Deno, 統一用 Bun 來測試 ts
+    - run: bun test ./problems/**/*.test.bun.ts
