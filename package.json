@@ -2,19 +2,19 @@
   "name": "practice-leetcode",
   "license": "MIT",
   "author": {
-    "name": "Chris Chu",
-    "email": "op.github.io@gmail.com",
-    "url": "https://github.com/o-p"
+    "name": "Chris Chu"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/jest": "^26.0.15",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
+    "prettier": "^3.8.1",
     "ts-node": "^9.0.0",
-    "typescript": "^4.1.2"
+    "typescript": "^5"
   },
   "scripts": {
     "test": "jest"

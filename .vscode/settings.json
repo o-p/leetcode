@@ -1,0 +1,8 @@
+{
+  "go.testFlags": ["-v"],
+  "go.testTimeout": "30s",
+  "editor.formatOnSave": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  }
+}
