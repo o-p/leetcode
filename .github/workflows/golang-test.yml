@@ -12,13 +12,13 @@ jobs:
 
     strategy:
       matrix:
-        go-version: [1.14.x, 1.26.x]
+        go-version: [1.21.x, 1.26.x] # go.mod 指定 1.21, 同時測試最新版本狀態
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
 
     - name: Install Go v${{ matrix.go-version }}
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v5
       with:
         go-version: ${{ matrix.go-version }}
 
